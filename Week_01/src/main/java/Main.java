@@ -21,7 +21,7 @@ public class Main {
     public static class MyClassLoader extends ClassLoader {
         @Override
         protected Class<?> findClass(String name) throws ClassNotFoundException {
-            String filePath = this.getClass().getResource("/._Hello.xlass").getPath();
+            String filePath = this.getClass().getResource("/Hello.xlass").getPath();
             System.out.println(filePath);
             File file = new File(filePath);
             if (!file.exists()) {
