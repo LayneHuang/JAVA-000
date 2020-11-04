@@ -10,6 +10,8 @@ import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpUtil;
 import io.netty.util.ReferenceCountUtil;
 
+import java.nio.charset.StandardCharsets;
+
 import static io.netty.handler.codec.http.HttpHeaderNames.CONNECTION;
 import static io.netty.handler.codec.http.HttpHeaderValues.KEEP_ALIVE;
 import static io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
@@ -39,7 +41,7 @@ public class BackendInboundHandler extends ChannelInboundHandlerAdapter {
         FullHttpResponse response = null;
         try {
             String value = "hello,hl";
-            response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(value.getBytes("UTF-8")));
+            response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(value.getBytes(StandardCharsets.UTF_8)));
             response.headers().set("Content-Type", "application/json");
             response.headers().setInt("Content-Length", response.content().readableBytes());
 
