@@ -1,4 +1,5 @@
 # netty-gateway
+修改了 HttpInboundHandler 类, 网关 HttpOutboundHandler 还是保留老师的做法，使用线程池处理  
 
 client 中 url 为 "/hl" 的 通过 网关中 routes 会走到 NettyHttpServer
 ![第一类请求](.\src\main\resources\pic1.png)
