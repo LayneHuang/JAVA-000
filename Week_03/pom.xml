@@ -31,7 +31,6 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.45.Final</version>
         </dependency>
-    
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
